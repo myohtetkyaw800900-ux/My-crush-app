@@ -32,6 +32,9 @@ export default function MusicPlayer({
             <div>
               <p className="song-title">{track.title}</p>
               <p className="song-meta">{track.artist}</p>
+              <p className="song-note">
+                {track.note}
+              </p>
             </div>
           </button>
         ))}

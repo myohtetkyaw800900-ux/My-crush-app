@@ -14,19 +14,22 @@ export default function App() {
         id: 'just-the-way-you-are',
         title: 'Just The Way You Are',
         artist: 'Bruno Mars',
-        src: '/assets/Bruno Mars - Just The Way You Are (Official Music Video).mp3'
+        src: '/assets/Bruno Mars - Just The Way You Are (Official Music Video).mp3',
+        note: 'Because you never need to change to be beautiful.'
       },
       {
         id: 'intentions',
         title: 'Intentions',
         artist: 'Justin Bieber ft. Quavo',
-        src: '/assets/Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo.mp3'
+        src: '/assets/Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo.mp3',
+        note: 'This song feels like a promise to keep things gentle and true.'
       },
       {
         id: 'love',
         title: 'LOVE.',
         artist: 'Kendrick Lamar ft. Zacari',
-        src: '/assets/Kendrick Lamar - LOVE. ft. Zacari.mp3'
+        src: '/assets/Kendrick Lamar - LOVE. ft. Zacari.mp3',
+        note: 'It’s the calm kind of love — the kind that feels like home.'
       }
     ],
     []
@@ -149,7 +152,7 @@ export default function App() {
             <div key={activeId} className="mt-8">
               {renderActiveSection()}
             </div>
-            <footer className="mt-12 text-center text-xs uppercase tracking-[0.3em] text-white/60">
+            <footer className="footer-text">
               Just for you.
             </footer>
           </div>
