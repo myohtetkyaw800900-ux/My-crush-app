@@ -139,6 +139,39 @@ h3 {
   color: rgba(92, 47, 74, 0.75);
 }
 
+.mini-quote {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 6px 14px rgba(170, 63, 106, 0.3);
+}
+
+.daily-quote-label {
+  margin-top: 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.daily-quote {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 6px 14px rgba(170, 63, 106, 0.3);
+}
+
+.footer-text {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .nav-shell {
   display: flex;
   flex-wrap: wrap;
@@ -225,6 +258,7 @@ h3 {
 .intro-splash {
   padding: 4.5rem 3rem;
   background: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
 }
 
 .intro-splash-text {
@@ -405,6 +439,12 @@ h3 {
 .song-meta {
   font-size: 0.8rem;
   color: rgba(92, 47, 74, 0.55);
+}
+
+.song-note {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: rgba(92, 47, 74, 0.7);
 }
 
 .reminder-list {

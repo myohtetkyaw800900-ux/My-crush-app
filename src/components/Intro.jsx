@@ -7,12 +7,8 @@ export default function Intro({ onEnter }) {
   const [phase, setPhase] = useState('splash');
 
   useEffect(() => {
-    if (phase !== 'splash') return;
-    const timer = setTimeout(() => {
-      setPhase('login');
-    }, 2200);
-    return () => clearTimeout(timer);
-  }, [phase]);
+    return () => {};
+  }, []);
 
   const handleSubmit = () => {
     if (password.trim() === defaultPassword) {
@@ -24,13 +20,32 @@ export default function Intro({ onEnter }) {
   };
 
   if (phase === 'splash') {
+    const handleContinue = () => setPhase('login');
     return (
       <section
         className="intro-screen"
         style={{ '--intro-bg': "url('/assets/intro-bg.jpg')" }}
-        onClick={() => setPhase('login')}
+        onClick={handleContinue}
+        onTouchStart={handleContinue}
+        onTouchEnd={handleContinue}
+        onPointerDown={handleContinue}
+        onPointerUp={handleContinue}
       >
-        <div className="intro-card intro-splash fade-in">
+        <div
+          className="intro-card intro-splash fade-in"
+          onClick={handleContinue}
+          onTouchStart={handleContinue}
+          onTouchEnd={handleContinue}
+          onPointerDown={handleContinue}
+          onPointerUp={handleContinue}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              handleContinue();
+            }
+          }}
+        >
           <p className="intro-splash-text">Welcome my love, enjoy your stay</p>
           <p className="intro-splash-hint">Tap to continue</p>
         </div>
