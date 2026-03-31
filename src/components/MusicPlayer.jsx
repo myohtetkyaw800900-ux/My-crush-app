@@ -1,6 +1,12 @@
 import React from 'react';
 
-export default function MusicPlayer({ isPlaying, onToggle }) {
+export default function MusicPlayer({
+  isPlaying,
+  onToggle,
+  tracks,
+  activeTrackId,
+  onSelectTrack
+}) {
   return (
     <section className="panel-card fade-in">
       <div className="panel-header">
@@ -13,20 +19,22 @@ export default function MusicPlayer({ isPlaying, onToggle }) {
         </button>
       </div>
       <div className="song-list">
-        <div className="song-row">
-          <span className="song-icon">🎵</span>
-          <div>
-            <p className="song-title">Hiwaga</p>
-            <p className="song-meta">by JMC</p>
-          </div>
-        </div>
-        <div className="song-row">
-          <span className="song-icon">🎵</span>
-          <div>
-            <p className="song-title">Wish</p>
-            <p className="song-meta">by Taylor</p>
-          </div>
-        </div>
+        {tracks.map((track) => (
+          <button
+            key={track.id}
+            type="button"
+            onClick={() => onSelectTrack(track)}
+            className={`song-row ${
+              activeTrackId === track.id ? 'song-row--active' : ''
+            }`}
+          >
+            <span className="song-icon">🎵</span>
+            <div>
+              <p className="song-title">{track.title}</p>
+              <p className="song-meta">{track.artist}</p>
+            </div>
+          </button>
+        ))}
       </div>
     </section>
   );

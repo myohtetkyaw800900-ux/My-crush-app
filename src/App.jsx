@@ -8,6 +8,29 @@ import LoveLetter from './components/LoveLetter';
 
 export default function App() {
   const audioRef = useRef(null);
+  const tracks = useMemo(
+    () => [
+      {
+        id: 'just-the-way-you-are',
+        title: 'Just The Way You Are',
+        artist: 'Bruno Mars',
+        src: '/assets/Bruno Mars - Just The Way You Are (Official Music Video).mp3'
+      },
+      {
+        id: 'intentions',
+        title: 'Intentions',
+        artist: 'Justin Bieber ft. Quavo',
+        src: '/assets/Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo.mp3'
+      },
+      {
+        id: 'love',
+        title: 'LOVE.',
+        artist: 'Kendrick Lamar ft. Zacari',
+        src: '/assets/Kendrick Lamar - LOVE. ft. Zacari.mp3'
+      }
+    ],
+    []
+  );
   const sections = useMemo(
     () => [
       { id: 'letter', label: 'Love Letter', icon: '💗' },
@@ -20,6 +43,8 @@ export default function App() {
   const [activeId, setActiveId] = useState('letter');
   const [showIntro, setShowIntro] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [activeTrackId, setActiveTrackId] = useState(tracks[0].id);
+  const activeTrack = tracks.find((track) => track.id === activeTrackId) ?? tracks[0];
 
   const handleToggle = async () => {
     const audio = audioRef.current;
@@ -32,6 +57,21 @@ export default function App() {
         await audio.play();
         setIsPlaying(true);
       }
+    } catch {
+      setIsPlaying(false);
+    }
+  };
+
+  const handleSelectTrack = async (track) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audio.src !== `${window.location.origin}${track.src}`) {
+      audio.src = track.src;
+    }
+    setActiveTrackId(track.id);
+    try {
+      await audio.play();
+      setIsPlaying(true);
     } catch {
       setIsPlaying(false);
     }
@@ -54,7 +94,15 @@ export default function App() {
       case 'letter':
         return <LoveLetter />;
       case 'music':
-        return <MusicPlayer isPlaying={isPlaying} onToggle={handleToggle} />;
+        return (
+          <MusicPlayer
+            isPlaying={isPlaying}
+            onToggle={handleToggle}
+            tracks={tracks}
+            activeTrackId={activeTrackId}
+            onSelectTrack={handleSelectTrack}
+          />
+        );
       case 'gallery':
         return <Gallery />;
       case 'notes':
@@ -70,7 +118,7 @@ export default function App() {
     >
       <audio
         ref={audioRef}
-        src="/assets/love-song.mp3"
+        src={activeTrack.src}
         preload="auto"
         onEnded={() => setIsPlaying(false)}
       />
@@ -102,7 +150,7 @@ export default function App() {
               {renderActiveSection()}
             </div>
             <footer className="mt-12 text-center text-xs uppercase tracking-[0.3em] text-white/60">
-              ချစ်ခြင်းမေတ္တာနဲ့ တည်ဆောက်ထားတာပါ
+              Just for you.
             </footer>
           </div>
         )}
