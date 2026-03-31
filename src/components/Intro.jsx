@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 export default function Intro({ onEnter }) {
-  const defaultPassword = 'iloveyou';
+  const defaultPassword = '20251020';
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [phase, setPhase] = useState('splash');
