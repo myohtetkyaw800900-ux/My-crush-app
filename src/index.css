@@ -109,6 +109,36 @@ h3 {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.meet-card {
+  margin: 0.9rem auto 0;
+  max-width: 260px;
+  border-radius: 18px;
+  padding: 0.65rem 0.9rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(230, 104, 156, 0.18);
+}
+
+.meet-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(210, 96, 146, 0.7);
+}
+
+.meet-date {
+  margin-top: 0.3rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #d4608f;
+}
+
+.meet-place {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: rgba(92, 47, 74, 0.75);
+}
+
 .nav-shell {
   display: flex;
   flex-wrap: wrap;
