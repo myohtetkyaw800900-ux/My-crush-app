@@ -15,16 +15,16 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="glass-panel fade-in rounded-3xl p-6 text-center">
-      <h2 className="section-title text-2xl font-semibold text-white">
+    <section className="glass-panel fade-in rounded-[32px] p-6 text-center">
+      <h2 className="section-title text-2xl">
         အထူးနေ့တွက်ချက်မှု
       </h2>
-      <p className="mt-1 text-sm text-white/70">
+      <p className="mt-1 text-sm text-rose-400">
         2026-04-14 နေ့အထိ ကျန်ရှိတဲ့နေ့ရက်
       </p>
-      <div className="soft-card mx-auto mt-5 w-44 rounded-2xl px-4 py-5 text-3xl font-semibold text-rose-100">
+      <div className="soft-card mx-auto mt-5 w-52 rounded-2xl px-4 py-5 text-3xl font-semibold text-rose-500">
         {days}
-        <span className="mt-1 block text-xs uppercase tracking-[0.25em] text-white/70">
+        <span className="mt-1 block text-xs uppercase tracking-[0.25em] text-rose-300">
           days
         </span>
       </div>
