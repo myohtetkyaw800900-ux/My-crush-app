@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const images = [
   '/assets/img15.jpg',
@@ -20,6 +20,8 @@ const images = [
 ];
 
 export default function Gallery() {
+  const [activeImage, setActiveImage] = useState(null);
+
   return (
     <section className="panel-card fade-in">
       <div className="panel-header">
@@ -30,6 +32,14 @@ export default function Gallery() {
           <div
             key={index}
             className="gallery-tile"
+            role="button"
+            tabIndex={0}
+            onClick={() => setActiveImage(img)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                setActiveImage(img);
+              }
+            }}
           >
             <img
               src={encodeURI(img)}
@@ -41,6 +51,35 @@ export default function Gallery() {
           </div>
         ))}
       </div>
+      {activeImage ? (
+        <div
+          className="lightbox"
+          onClick={() => setActiveImage(null)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') {
+              setActiveImage(null);
+            }
+          }}
+        >
+          <div className="lightbox-content" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="lightbox-close"
+              onClick={() => setActiveImage(null)}
+              aria-label="Close"
+            >
+              ✕
+            </button>
+            <img
+              src={encodeURI(activeImage)}
+              className="lightbox-img"
+              alt="memory-full"
+            />
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
