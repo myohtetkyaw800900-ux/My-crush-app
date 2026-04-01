@@ -72,11 +72,13 @@ export default function Gallery() {
             >
               ✕
             </button>
-            <img
-              src={encodeURI(activeImage)}
-              className="lightbox-img"
-              alt="memory-full"
-            />
+            <div className="lightbox-frame">
+              <img
+                src={encodeURI(activeImage)}
+                className="lightbox-img"
+                alt="memory-full"
+              />
+            </div>
           </div>
         </div>
       ) : null}
