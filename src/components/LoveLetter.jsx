@@ -1,12 +1,12 @@
 import React from 'react';
 
 const paragraphs = [
-  'Hi,',
-  'I’ve been wanting to say this in a simple, honest way: you make my days brighter. Your smile has a way of turning ordinary moments into something I remember.',
-  'I don’t know where life will take us, but I do know I’m grateful for you — for your kindness, your energy, and the calm you bring just by being you.',
-  'If it’s okay, I’d like to get to know you better, slowly and sincerely. No pressure — just me being real with you.',
+  'Dear Mama,',
+  'I’ve been wanting to say this simply: you brighten my days. Your smile turns ordinary moments into something I hold onto.',
+  'I admire your kindness and the calm you carry. Being around you feels easy, like everything is a little softer.',
+  'If you’re open to it, I’d love to get to know you better — gently, honestly, and at your pace.',
   'With a gentle heart,',
-  'Me'
+  'M H K'
 ];
 
 export default function LoveLetter() {

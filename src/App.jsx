@@ -11,6 +11,27 @@ export default function App() {
   const tracks = useMemo(
     () => [
       {
+        id: 'best-part',
+        title: 'Best Part',
+        artist: 'Daniel Caesar & H.E.R.',
+        src: '/assets/Daniel Caesar & H.E.R. - Best Part, a Visual.mp3',
+        note: 'The quiet kind of love that feels like a gentle hug.'
+      },
+      {
+        id: 'until-i-found-you',
+        title: 'Until I Found You',
+        artist: 'Stephen Sanchez',
+        src: '/assets/Stephen Sanchez - Until I Found You (Official Video).mp3',
+        note: 'Soft, sincere, and a little dreamy — just right.'
+      },
+      {
+        id: 'lover',
+        title: 'Lover',
+        artist: 'Taylor Swift',
+        src: '/assets/Taylor Swift - Lover (Official Music Video).mp3',
+        note: 'Gentle, sweet, and full of soft promises.'
+      },
+      {
         id: 'just-the-way-you-are',
         title: 'Just The Way You Are',
         artist: 'Bruno Mars',
@@ -18,18 +39,11 @@ export default function App() {
         note: 'Because you never need to change to be beautiful.'
       },
       {
-        id: 'intentions',
-        title: 'Intentions',
-        artist: 'Justin Bieber ft. Quavo',
-        src: '/assets/Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo.mp3',
-        note: 'This song feels like a promise to keep things gentle and true.'
-      },
-      {
-        id: 'love',
-        title: 'LOVE.',
-        artist: 'Kendrick Lamar ft. Zacari',
-        src: '/assets/Kendrick Lamar - LOVE. ft. Zacari.mp3',
-        note: 'It’s the calm kind of love — the kind that feels like home.'
+        id: 'yellow',
+        title: 'Yellow',
+        artist: 'Coldplay',
+        src: '/assets/Coldplay - Yellow (Official Video).mp3',
+        note: 'Soft and warm, like the way you light up a room.'
       }
     ],
     []
@@ -154,6 +168,7 @@ export default function App() {
             </div>
             <footer className="footer-text">
               Just for you.
+              <span className="footer-subtext">May Nile</span>
             </footer>
           </div>
         )}
