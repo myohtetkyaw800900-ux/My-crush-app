@@ -1,15 +1,17 @@
 import React from 'react';
 
 const notes = [
-  'Take care always.',
-  'Eat on time.',
-  "You’re mine... always.",
-  'Drink enough water.',
-  'Sleep well tonight.',
-  'Don’t forget to smile.',
-  'I will always be by your side whenever you need me.',
+  'Take care always yourself.',
   'Be kind to yourself.',
-  "Don’t take too long to reply."
+  'Eat on time.',
+  'Drink enough water.',
+  'Don’t forget to smile.',
+  'Your smile makes my day.',
+  "You're not alone.",
+  'I will always be by your side whenever you need me.',
+  "Don’t take too long to reply.",
+  'Just you, just me, just us.',
+  "You’re mine... always."
 ];
 
 export default function LoveNotes() {

@@ -4,50 +4,34 @@ export default function Intro({ onEnter }) {
   const defaultPassword = '20251020';
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [phase, setPhase] = useState('splash');
+  const [phase, setPhase] = useState('login');
 
   useEffect(() => {
-    return () => {};
-  }, []);
+    if (phase !== 'success') return;
+    const timer = setTimeout(() => {
+      onEnter();
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [phase, onEnter]);
 
   const handleSubmit = () => {
     if (password.trim() === defaultPassword) {
       setError('');
-      onEnter();
+      setPhase('success');
       return;
     }
-    setError('Password မမှန်ပါ');
+    setError('Not correct yet.');
   };
 
-  if (phase === 'splash') {
-    const handleContinue = () => setPhase('login');
+  if (phase === 'success') {
     return (
       <section
         className="intro-screen"
         style={{ '--intro-bg': "url('/assets/intro-bg.jpg')" }}
-        onClick={handleContinue}
-        onTouchStart={handleContinue}
-        onTouchEnd={handleContinue}
-        onPointerDown={handleContinue}
-        onPointerUp={handleContinue}
       >
-        <div
-          className="intro-card intro-splash fade-in"
-          onClick={handleContinue}
-          onTouchStart={handleContinue}
-          onTouchEnd={handleContinue}
-          onPointerDown={handleContinue}
-          onPointerUp={handleContinue}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              handleContinue();
-            }
-          }}
-        >
+        <div className="intro-card intro-splash fade-in">
+          <p className="intro-splash-text">I love you ❤️</p>
           <p className="intro-splash-text">Welcome my love, enjoy your stay</p>
-          <p className="intro-splash-hint">Tap to continue</p>
         </div>
       </section>
     );
@@ -62,14 +46,14 @@ export default function Intro({ onEnter }) {
         <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white text-3xl shadow-[0_16px_40px_rgba(244,84,151,0.3)]">
           💌
         </div>
-        <h1 className="intro-title mt-6">Hey…</h1>
-        <p className="intro-subtitle">ကိုယ့်ဘဝရဲ့ အထူးတဲ့သူအတွက် အထူးစာလွှာလေး</p>
+        <h1 className="intro-title mt-6">Only for you…</h1>
+        <p className="intro-subtitle">ကိုယ့်ဘဝရဲ့ ထူးတဲ့သူအတွက် အထူးစာလွှာလေး</p>
         <p className="mt-2 text-sm text-rose-300">
-          ဒီမှာ မင်းနဲ့အတူရှိတဲ့ အမှတ်တရတွေကို စုစည်းထားပါတယ်
+          ဒီမှာ မင်းနဲ့အတူရှိတဲ့ အမှတ်တရတွေကို စုစည်းထားတယ်
         </p>
         <div className="intro-form">
           <label className="intro-label" htmlFor="intro-password">
-            Password
+            Enter First Meet Day
           </label>
           <input
             id="intro-password"
