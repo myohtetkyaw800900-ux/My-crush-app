@@ -32,6 +32,13 @@ export default function App() {
         note: 'Gentle, sweet, and full of soft promises.'
       },
       {
+        id: 'daylight',
+        title: 'Daylight',
+        artist: 'Taylor Swift',
+        src: '/assets/Taylor Swift - Daylight (Official Audio).mp3',
+        note: 'Like finding light after a long night.'
+      },
+      {
         id: 'just-the-way-you-are',
         title: 'Just The Way You Are',
         artist: 'Bruno Mars',
